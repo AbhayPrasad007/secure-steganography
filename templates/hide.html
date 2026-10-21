@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Message | STEGANO GUARD</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a class="brand" href="/">STEGANO <span>GUARD</span></a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/hide">Hide Message</a>
+            <a href="/extract">Extract Message</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="form-card">
+            <span class="eyebrow">🔐 Encryption + Steganography</span>
+
+            <h1>Hide a Secret Message</h1>
+
+            <p class="form-description">
+                Select an image, enter your message and create an encoded
+                PNG that conceals your encrypted information.
+            </p>
+
+            {% if success %}
+                <div class="message message-success">
+                    <strong>✓ Message hidden successfully!</strong>
+                    <p>Your encrypted message has been embedded into the image.</p>
+                    <p>Your download should start automatically.</p>
+                </div>
+            {% endif %}
+
+            <form method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="image">Choose an image</label>
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                        required
+                    >
+                    <p class="form-description">
+                        Supported formats: PNG, JPG and JPEG.
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your secret message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Enter the message you want to hide..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Create a password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter a strong password"
+                        autocomplete="new-password"
+                        required
+                    >
+                    <p class="form-description">
+                        Remember this password. You will need it to extract
+                        and decrypt your message later.
+                    </p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="button">
+                        Encrypt & Hide Message →
+                    </button>
+
+                    <a href="/" class="button button-secondary">
+                        Cancel
+                    </a>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>STEGANO GUARD · Secure Steganography Project</p>
+    </footer>
+
+</body>
+</html>

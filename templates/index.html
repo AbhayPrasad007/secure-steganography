@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEGANO GUARD | Secure Image Steganography</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a class="brand" href="/">STEGANO <span>GUARD</span></a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/hide">Hide Message</a>
+            <a href="/extract">Extract Message</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">🔐 Secure Image Steganography</span>
+
+            <h1>Keep Your Secrets <span>Hidden.</span></h1>
+
+            <p class="subtitle">
+                Protect sensitive information by encrypting secret messages
+                and hiding them inside ordinary images. Your message stays
+                concealed until someone extracts it with the correct password.
+            </p>
+        </section>
+
+        <h2 class="section-title">What would you like to do?</h2>
+
+        <section class="cards">
+
+            <article class="card">
+                <div class="card-icon">🛡️</div>
+
+                <h2>Hide Secret Message</h2>
+
+                <p>
+                    Choose an image, enter your secret message and password,
+                    and create a PNG image containing your encrypted message.
+                </p>
+
+                <a class="button" href="/hide">
+                    Hide a Message →
+                </a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🔎</div>
+
+                <h2>Extract Secret Message</h2>
+
+                <p>
+                    Upload a STEGANO GUARD encoded PNG and use the original
+                    password to recover your hidden message.
+                </p>
+
+                <a class="button button-secondary" href="/extract">
+                    Extract a Message →
+                </a>
+            </article>
+
+        </section>
+
+        <section class="card" style="margin-top: 24px;">
+            <h2>How it works</h2>
+
+            <p>
+                <strong>01. Encrypt</strong> — Your message is protected
+                using password-based encryption.
+            </p>
+
+            <p>
+                <strong>02. Conceal</strong> — The encrypted data is embedded
+                into image pixels using Least Significant Bit (LSB) steganography.
+            </p>
+
+            <p>
+                <strong>03. Recover</strong> — Extract the hidden data and
+                decrypt it with the correct password.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>STEGANO GUARD · Secure Steganography Project</p>
+        <p>Developed as part of the NTCC academic project.</p>
+    </footer>
+
+</body>
+</html>
