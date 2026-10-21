@@ -10,6 +10,7 @@ import secrets
 import struct
 
 app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB upload limit
 
 MAGIC = b"SG01"
 SALT_SIZE = 16
